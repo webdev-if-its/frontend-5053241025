@@ -41,7 +41,7 @@ Ketika kita melakukan commit, file yang kita commit hanya masih berada di local 
 JSX tidak memiliki type-checking, sedangkan TSX memiliki type-checking. Project ini menggunakan .tsx karena kita membutuhkan untnuk membuat props yang hanay ada di .tsx
 
 ## Kenapa Union Type untuk Status
-(tulis di sini)
+Menurut saya, union type digunakan karena kita hanya butuh 3 status saja, jadi kita tidak perlu membuat type baru untuk status tersebut. Kalau menggunakan string biasa, kemungkinan besar kita salah menulis status, misal ada yang "delivery" ada yang "pending". Karena kita Union basicaly ada documentation di code nya langsung
 
 ## Refleksi
 (tulis di sini)
