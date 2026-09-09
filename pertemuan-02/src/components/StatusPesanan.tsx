@@ -4,7 +4,7 @@
 // "Selesai", batal -> "Dibatalkan". Lihat SOAL.md untuk kontrak lengkap.
 import type { Status } from "../types"
 
-type Stats = {
+interface Stats {
   status: Status
 }
 
