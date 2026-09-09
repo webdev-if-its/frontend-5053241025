@@ -38,6 +38,7 @@ Bagian di bawah ini **isi bertahap** sesuai level yang sedang kalian kerjakan (l
 Ketika kita melakukan commit, file yang kita commit hanya masih berada di local repo kita. artinya "ready untuk di push" tetapi belum di push. jadi file tersebut belum ada di repo, masih berada di local. Sedangkan jika file di push maka sudah akan masuk ke remote repository seperti github.
 
 ## JSX vs TSX
+JSX tidak memiliki type-checking, sedangkan TSX memiliki type-checking. Project ini menggunakan .tsx karena kita membutuhkan untnuk membuat props yang hanay ada di .tsx
 
 ## Kenapa Union Type untuk Status
 (tulis di sini)
