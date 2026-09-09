@@ -30,15 +30,13 @@ Bagian di bawah ini **isi bertahap** sesuai level yang sedang kalian kerjakan (l
 (tulis di sini)
 
 ## Identitas
-- Nama: (tulis di sini)
-- NRP: (tulis di sini)
-- Kelas: (tulis di sini)
+- Nama: Kadek Angga Wistara
+- NRP: 5053241025
+- Kelas: M
 
 ## Commit vs Push
-(tulis di sini)
 
 ## JSX vs TSX
-(tulis di sini)
 
 ## Kenapa Union Type untuk Status
 (tulis di sini)
