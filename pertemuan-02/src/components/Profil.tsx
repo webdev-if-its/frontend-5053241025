@@ -8,9 +8,11 @@ interface NamaNRP {
   nama: string
   nrp: string
 }
+
 export function Profil({ nama, nrp }: NamaNRP) {
   return <div>
     <h3>Nama : {nama}</h3>
     <h3>NRP : {nrp}</h3>
   </div>
 }
+
