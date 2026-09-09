@@ -27,7 +27,7 @@ Kalau dosen memperbaiki sesuatu di pertemuan yang sudah dirilis (mis. ada bug di
 Bagian di bawah ini **isi bertahap** sesuai level yang sedang kalian kerjakan (lihat `pertemuan-XX/SOAL.md`) — heading-nya dicek otomatis, jangan diganti namanya.
 
 ## Struktur Project
-(tulis di sini)
+ App.tsx itu merupakan root component dan main.tsx itu entry point untuk mengakses App.tsx sebagai root component. Jadi tempat kita mengimplementasikan kode kita itu ada di App.tsx
 
 ## Identitas
 - Nama: Kadek Angga Wistara
