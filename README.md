@@ -44,4 +44,4 @@ JSX tidak memiliki type-checking, sedangkan TSX memiliki type-checking. Project 
 Menurut saya, union type digunakan karena kita hanya butuh 3 status saja, jadi kita tidak perlu membuat type baru untuk status tersebut. Kalau menggunakan string biasa, kemungkinan besar kita salah menulis status, misal ada yang "delivery" ada yang "pending". Karena kita Union basicaly ada documentation di code nya langsung
 
 ## Refleksi
-(tulis di sini)
+Setelah belajar props, saya jadi lebih memahami bagaimana cara mengirim data dari parent component ke child component. Selain itu, saya juga belajar bagaimana cara menggunakan props dengan tipe data yang berbeda-beda, seperti string, number, dan boolean. Saya juga belajar bagaimana cara menggunakan union type untuk membatasi nilai yang bisa diterima oleh props.
