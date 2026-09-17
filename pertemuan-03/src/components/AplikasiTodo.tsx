@@ -10,6 +10,19 @@
 // paling mengubah cara berpikirmu dibanding menulis HTML/CSS biasa?
 //
 // Lihat SOAL.md untuk kontrak lengkap.
-export function AplikasiTodo(props: any) {
-  return <p>TODO</p>
+
+import type { Tugas } from "../types";
+import { DaftarTugasLengkap } from "./DaftarTugasLengkap";
+import { RingkasanTugas } from "./RingkasanTugas";
+
+type AplikasiTodoProps = {
+  tugas: Tugas[];
+  onHapus: (id: string) => void;
+};
+
+export function AplikasiTodo({ tugas, onHapus }: AplikasiTodoProps) {
+  return <p>
+    <RingkasanTugas tugas={tugas} />
+    <DaftarTugasLengkap tugas={tugas} onHapus={onHapus} />
+  </p>
 }
