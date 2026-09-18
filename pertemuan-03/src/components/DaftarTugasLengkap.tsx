@@ -10,6 +10,7 @@
 // Lihat SOAL.md untuk kontrak lengkap.
 
 import type { Tugas } from "../types";
+import { Button } from "./Button";
 
 type DaftarTugasLengkapProps = {
   tugas: Tugas[];
@@ -24,7 +25,9 @@ export function DaftarTugasLengkap({ tugas, onHapus }: DaftarTugasLengkapProps) 
     {tugas.map((item) => (
       <ul key={item.id}>
         <li>{item.teks}</li>
-        <button onClick={() => onHapus(item.id)}>Hapus</button>
+        <Button variant="danger" onClick={() => onHapus(item.id)}>
+          Hapus
+        </Button>
       </ul>
     ))}
   </p>
