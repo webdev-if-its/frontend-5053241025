@@ -47,4 +47,4 @@ Menurut saya, union type digunakan karena kita hanya butuh 3 status saja, jadi k
 Setelah belajar props, saya jadi lebih memahami bagaimana cara mengirim data dari parent component ke child component. Selain itu, saya juga belajar bagaimana cara menggunakan props dengan tipe data yang berbeda-beda, seperti string, number, dan boolean. Saya juga belajar bagaimana cara menggunakan union type untuk membatasi nilai yang bisa diterima oleh props.
 
 ## Refleksi Pertemuan 3
-Ternyata dengan menggunakan tailwind css, kita bisa membuat styling dengan cepat dan mudah. Selain itu, saya juga belajar bagaimana cara membuat komponen reusable dengan menggunakan prop variant. Dengan begitu, kita bisa menghemat waktu dan usaha dalam membuat komponen yang sama berulang-ulang.
+Yang paling mengubah cara berpikir saya adalah conditional rendering dengan operator && dan ternary langsung di JSX. Dulu kalau pakai HTML/CSS biasa, saya harus menampilkan lalu menyembunyikan elemen dengan class display:none lewat JavaScript manual, sehingga elemennya tetap ada di DOM.     
