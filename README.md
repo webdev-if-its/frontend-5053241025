@@ -48,3 +48,6 @@ Setelah belajar props, saya jadi lebih memahami bagaimana cara mengirim data dar
 
 ## Refleksi Pertemuan 3
 Yang paling mengubah cara berpikir saya adalah conditional rendering dengan operator && dan ternary langsung di JSX. Dulu kalau pakai HTML/CSS biasa, saya harus menampilkan lalu menyembunyikan elemen dengan class display:none lewat JavaScript manual, sehingga elemennya tetap ada di DOM.     
+
+## Refleksi Pertemuan 4
+variabel biasa itu nilainya tidak akan berubah ketika kita merender ulang component, sedangkan state itu nilainya akan berubah ketika kita merender ulang component. e.target.value perlu diubah dulu ke number sebelum dihitung karena e.target.value itu selalu string, jadi kalau kita tidak mengubahnya ke number maka hasilnya akan menjadi string juga.
