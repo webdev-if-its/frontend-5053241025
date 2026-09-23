@@ -9,20 +9,20 @@
 //                                  hasil, dengan key yang tepat
 // Lihat SOAL.md untuk kontrak lengkap.
 
-type QueryProps = {
-  query: string,
+type HasilPencarianProps = {
+  query: string
   hasil: string[]
 }
 
-export function HasilPencarian({ query, hasil }: QueryProps) {
+export function HasilPencarian({ query, hasil }: HasilPencarianProps) {
   if (query === "") {
     return <p>Ketik sesuatu untuk mencari</p>
-  } else if (query !== "" && hasil.length === 0) {
+  } else if (hasil.length === 0) {
     return <p>Tidak ditemukan</p>
   }
   return <ul>
     {hasil.map((item) => (
-      <li key={item}>{hasil}</li>
+      <li key={item}>{item}</li>
     ))}
   </ul>
 }

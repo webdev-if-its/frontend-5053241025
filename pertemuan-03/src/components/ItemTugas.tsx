@@ -3,13 +3,10 @@
 // yang memuat teks tugas.teks. Lihat SOAL.md untuk kontrak lengkap.
 import type { Tugas } from "../types"
 
-type tugass = {
+type ItemTugasProps = {
   tugas: Tugas
 }
 
-export function ItemTugas({ tugas }: tugass) {
-  return (<>
-    <li> {tugas.teks}</li>
-  </>
-  );
+export function ItemTugas({ tugas }: ItemTugasProps) {
+  return <li>{tugas.teks}</li>
 }
