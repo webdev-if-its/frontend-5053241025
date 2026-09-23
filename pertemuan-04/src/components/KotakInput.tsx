@@ -9,5 +9,5 @@ type KotakInputProps = {
 }
 
 export function KotakInput({ onUbah }: KotakInputProps) {
-  return <input onChange={(e) => onUbah(e.target.value)} />
+  return <input onChange={(ilham) => onUbah(ilham.target.value)} />
 }
