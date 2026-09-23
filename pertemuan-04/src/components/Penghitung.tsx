@@ -3,6 +3,21 @@
 // teks "Jumlah: {angka}" plus tiga tombol: "+" (tambah 1), "-" (kurangi 1),
 // "Reset" (kembali ke nilai awal).
 // Lihat SOAL.md untuk kontrak lengkap.
-export function Penghitung(props: any) {
-  return <p>TODO</p>
+
+import { useState } from "react";
+
+type PenghitungProps = {
+  awal?: number;
+};
+
+export function Penghitung({ awal = 0 }: PenghitungProps) {
+  const [angka, setAngka] = useState(awal);
+  return (
+    <div>
+      <p>Jumlah: {angka}</p>
+      <button onClick={() => setAngka(angka + 1)}>+</button>
+      <button onClick={() => setAngka(angka - 1)}>-</button>
+      <button onClick={() => setAngka(awal)}>Reset</button>
+    </div>
+  );
 }
