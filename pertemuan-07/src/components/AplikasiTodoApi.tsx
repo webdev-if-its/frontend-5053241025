@@ -1,6 +1,6 @@
 import { useEffect, useState, type FormEvent } from 'react'
 
-import { addTodo, getTodos } from '../api/todos'
+import { addTodo, getTodos, hapusTodo, updateTodo } from '../api/todos'
 import type { Todo } from '../types'
 
 export function AplikasiTodoApi() {
@@ -35,6 +35,30 @@ export function AplikasiTodoApi() {
     }
   }
 
+  async function handleToggle(todo: Todo) {
+    try {
+      const updatedTodo = await updateTodo(todo.id, !todo.completed)
+      setTodos((currentTodos) =>
+        currentTodos.map((currentTodo) =>
+          currentTodo.id === updatedTodo.id ? updatedTodo : currentTodo,
+        ),
+      )
+      setError(null)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : String(err))
+    }
+  }
+
+  async function handleDelete(id: number) {
+    try {
+      await hapusTodo(id)
+      setTodos((currentTodos) => currentTodos.filter((todo) => todo.id !== id))
+      setError(null)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : String(err))
+    }
+  }
+
   return (
     <section>
       <form onSubmit={handleSubmit}>
@@ -53,10 +77,16 @@ export function AplikasiTodoApi() {
           {todos.map((todo) => (
             <li key={todo.id}>
               <label>
-                <input type="checkbox" checked={todo.completed} readOnly />
+                <input
+                  type="checkbox"
+                  checked={todo.completed}
+                  onChange={() => void handleToggle(todo)}
+                />
                 {todo.title}
               </label>
-              <button type="button">Hapus</button>
+              <button type="button" onClick={() => void handleDelete(todo.id)}>
+                Hapus
+              </button>
             </li>
           ))}
         </ul>
