@@ -5,6 +5,9 @@ const BASE_URL = 'https://jsonplaceholder.typicode.com/todos'
 // Level 1 & 2
 export async function getTodos(): Promise<Todo[]> {
   const res = await fetch(BASE_URL)
+  if (!res.ok) {
+    throw new Error('Gagal mengambil data')
+  }
   return res.json() as Promise<Todo[]>
 }
 
