@@ -1,15 +1,66 @@
-// TODO(Level 8-10): komponen TANPA props — aplikasi todo yang tersambung ke
-// API lewat fungsi di '../api/todos' (JANGAN memanggil fetch() langsung di
-// sini):
-// - saat pertama tampil: ambil daftar (getTodos) dan tampilkan sebagai <li>,
-//   tiap <li> berisi checkbox berlabel title + tombol "Hapus",
-// - form dengan input berlabel "Todo baru" + tombol "Tambah": panggil
-//   addTodo(title), lalu tambahkan todo HASIL RESPONS ke akhir daftar dan
-//   kosongkan input,
-// - klik checkbox: panggil updateTodo(id, !completed), lalu ganti todo itu di
-//   state dengan HASIL RESPONS,
-// - klik "Hapus": panggil hapusTodo(id), lalu buang todo itu dari state.
-// Lihat SOAL.md untuk kontrak lengkap.
-export function AplikasiTodoApi(props: any) {
-  return <p>TODO</p>
+import { useEffect, useState, type FormEvent } from 'react'
+
+import { addTodo, getTodos } from '../api/todos'
+import type { Todo } from '../types'
+
+export function AplikasiTodoApi() {
+  const [todos, setTodos] = useState<Todo[]>([])
+  const [title, setTitle] = useState('')
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    async function loadTodos() {
+      try {
+        setTodos(await getTodos())
+      } catch (err) {
+        setError(err instanceof Error ? err.message : String(err))
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    void loadTodos()
+  }, [])
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    try {
+      const newTodo = await addTodo(title)
+      setTodos((currentTodos) => [...currentTodos, newTodo])
+      setTitle('')
+      setError(null)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : String(err))
+    }
+  }
+
+  return (
+    <section>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Todo baru
+          <input value={title} onChange={(event) => setTitle(event.target.value)} />
+        </label>
+        <button type="submit">Tambah</button>
+      </form>
+
+      {error && <p>Terjadi error: {error}</p>}
+      {loading ? (
+        <p>Memuat...</p>
+      ) : (
+        <ul>
+          {todos.map((todo) => (
+            <li key={todo.id}>
+              <label>
+                <input type="checkbox" checked={todo.completed} readOnly />
+                {todo.title}
+              </label>
+              <button type="button">Hapus</button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  )
 }
