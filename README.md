@@ -51,3 +51,6 @@ Yang paling mengubah cara berpikir saya adalah conditional rendering dengan oper
 
 ## Refleksi Pertemuan 4
 variabel biasa itu nilainya tidak akan berubah ketika kita merender ulang component, sedangkan state itu nilainya akan berubah ketika kita merender ulang component. e.target.value perlu diubah dulu ke number sebelum dihitung karena e.target.value itu selalu string, jadi kalau kita tidak mengubahnya ke number maka hasilnya akan menjadi string juga.
+## Refleksi Pertemuan 9
+
+Memisahkan fungsi API dari komponen membuat komponen lebih fokus mengelola tampilan dan state, sementara detail request HTTP dapat digunakan kembali dan diuji secara terpisah. `fetch` tidak otomatis melempar error untuk respons 404 atau 500 karena respons tersebut tetap merupakan respons HTTP yang berhasil diterima; kode perlu memeriksa `res.ok` dan melempar error sendiri.
