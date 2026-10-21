@@ -27,7 +27,7 @@ export function DaftarTodoRemote() {
   }
 
   if (error) {
-    return null
+    return <p>Terjadi error: {error}</p>
   }
 
   return (
